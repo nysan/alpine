@@ -862,6 +862,17 @@ smime_config_init_display(struct pine *ps, CONF_S **ctmp, CONF_S **first_line)
     (*ctmp)->varmem		= ind;
     (*ctmp)->value		= pretty_value(ps, (*ctmp));
 
+    ind = feature_list_index(F_CIPHER_DES_EDE3_CBC);
+    feature = feature_list(ind);
+    new_confline(ctmp)->var 	= vtmp;
+    (*ctmp)->varnamep		= ctmpb;
+    (*ctmp)->keymenu		= &config_checkbox_keymenu;
+    (*ctmp)->help		= config_help(vtmp-ps->vars, feature->id);
+    (*ctmp)->tool		= checkbox_tool;
+    (*ctmp)->valoffset		= feature_indent();
+    (*ctmp)->varmem		= ind;
+    (*ctmp)->value		= pretty_value(ps, (*ctmp));
+
     ind = feature_list_index(F_USE_CERT_STORE_ONLY);
     feature = feature_list(ind);
     new_confline(ctmp)->var 	= vtmp;

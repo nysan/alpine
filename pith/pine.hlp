@@ -4370,6 +4370,7 @@ There are also additional details on
 <li><a href="h_config_smime_encrypt_by_default">S/MIME FEATURE: <!--#echo var="FEAT_smime-encrypt-by-default"--></a>
 <li><a href="h_config_smime_remember_passphrase">S/MIME FEATURE: <!--#echo var="FEAT_smime-remember-passphrase"--></a>
 <li><a href="h_config_smime_sign_by_default">S/MIME FEATURE: <!--#echo var="FEAT_smime-sign-by-default"--></a>
+<li><a href="h_config_smime_encrypt_des_ede3_cbc">S/MIME FEATURE: <!--#echo var="FEAT_smime-encrypt-des-ede3-cbc"--></a>
 <li><a href="h_config_smime_use_cert_store">S/MIME FEATURE: <!--#echo var="FEAT_smime-use-store-only"--></a>
 <li><a href="h_config_smime_pubcerts_in_keychain">S/MIME FEATURE: <!--#echo var="FEAT_publiccerts-in-keychain"--></a>
 <li><a href="h_config_smime_cacertcon">S/MIME OPTION: <!--#echo var="VAR_smime-cacert-container"--></a>
@@ -35278,6 +35279,35 @@ Only the default value is affected.
 In any case, you may still toggle the Signing option on or off before sending
 with the &quot;G Sign&quot; command (provided you have a personal digital ID
 certificate).
+<P>
+<UL>   
+<LI><A HREF="h_mainhelp_smime">General S/MIME help</A>
+</UL><P>
+<P>
+
+<UL>   
+<LI><A HREF="h_finding_help">Finding more information and requesting help</A>
+</UL><P>
+&lt;End of help on this topic&gt;
+</BODY>
+</HTML>
+========== h_config_smime_encrypt_des_ede3_cbc ==========
+<HTML>
+<HEAD>
+<TITLE>S/MIME FEATURE: <!--#echo var="FEAT_smime-encrypt-des-ede3-cbc"--></TITLE>
+</HEAD>
+<BODY>
+<H1>S/MIME FEATURE: <!--#echo var="FEAT_smime-encrypt-des-ede3-cbc"--></H1>
+
+UNIX Alpine only.
+<P>
+This feature only has an effect if your version of Alpine includes
+support for S/MIME.
+It affects Alpine's behavior when you send a message.
+If this option is set, the &quot;Sign&quot; option will default to ON when sending messages.
+<P>
+Encrypt using DES-EDE3-CBC instead of the default algorith, since it in some deployments
+seem to crash M$ Outlook when opening encrypted and signed emails.
 <P>
 <UL>   
 <LI><A HREF="h_mainhelp_smime">General S/MIME help</A>

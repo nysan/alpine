@@ -3299,6 +3299,8 @@ feature_list(int index)
 	 F_REMEMBER_SMIME_PASSPHRASE, h_config_smime_remember_passphrase, PREF_HIDDEN, 0},
 	{"smime-sign-by-default", "S/MIME -- Sign by Default",
 	 F_SIGN_DEFAULT_ON, h_config_smime_sign_by_default, PREF_HIDDEN, 0},
+	{"smime-encrypt-des-ede3-cbc", "S/MIME -- Encrypt with DES-EDE3-CBC",
+	 F_CIPHER_DES_EDE3_CBC, h_config_smime_encrypt_des_ede3_cbc, PREF_HIDDEN, 0},
 	{"smime-use-store-only", "S/MIME -- Validate Using Certificate Store Only",
 	 F_USE_CERT_STORE_ONLY, h_config_smime_use_cert_store, PREF_HIDDEN, 1},
 #ifdef APPLEKEYCHAIN

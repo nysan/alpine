@@ -2496,7 +2496,11 @@ encrypt_file(char *fp, char *text, PERSONAL_CERT *pc)
   if(pc == NULL)
     return 0;
 
-  cipher = EVP_aes_256_cbc();
+  if(F_ON(F_CIPHER_DES_EDE3_CBC, ps_global))
+    cipher = EVP_des_ede3_cbc();
+  else
+    cipher = EVP_aes_256_cbc();
+
   encerts = sk_X509_new_null();
 
   sk_X509_push(encerts, X509_dup(pc->cert));
@@ -2552,8 +2556,11 @@ encrypt_outgoing_message(METAENV *header, BODY **bodyP)
     dprint((9, "encrypt_outgoing_message()"));
     smime_init();
 
-    cipher = EVP_aes_256_cbc();
-
+    if(F_ON(F_CIPHER_DES_EDE3_CBC, ps_global))
+      cipher = EVP_des_ede3_cbc();
+    else
+      cipher = EVP_aes_256_cbc();
+      
     encerts = sk_X509_new_null();
 
     /* Look for a certificate for each of the recipients */

@@ -6570,6 +6570,17 @@ John: on a job well done!
           certificate).
           + General S/MIME Overview
           This feature is displayed as "S/MIME -- Sign by Default".
+   _smime-encrypt-des-ede3-cbc_
+          UNIX _Alpine_ only.
+          This feature only has an effect if your version of _Alpine_
+          includes support for S/MIME. It affects _Alpine_'s behavior when
+          you send a message. 
+	  If this option is set, the "Sign" option
+          will change the default encryption algorithm to DES-EDE3-CBC since
+	  some version out M$ Outlook seems to crash when receiving signed and
+	  encrypted mail using the default algorithm.
+          + General S/MIME Overview
+          This feature is displayed as "S/MIME -- Encrypt with DES-EDE3-CBC".
    _sort-default-fcc-alpha_
           This feature controls an aspect of _Alpine_'s FOLDER LIST
           screen. If set, the default FCC folder will be sorted

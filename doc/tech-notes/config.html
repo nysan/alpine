@@ -7611,6 +7611,22 @@ certificate).
 This feature is displayed as &quot;S/MIME -- Sign by Default&quot;.
 <P>
 
+<DT> <A NAME="smime-encrypt-des-ede3-cbc"><EM>smime-encrypt-des-ede3-cbc</EM></A>
+
+<DD> UNIX <EM>Alpine</EM> only.
+<P>
+This feature only has an effect if your version of <EM>Alpine</EM> includes
+support for S/MIME.
+It affects <EM>Alpine</EM>'s behavior when you send a message.
+It changes the default encryption algorithm to DES-EDE3-CBC since it seems to
+be able to crash at least some versions of M$ Outlook.
+<P>
+<UL>
+<LI><A HREF="config-notes.html#smime-general">General S/MIME Overview</A>
+</UL><P>
+This feature is displayed as &quot;S/MIME -- Encrypt with DES-EDE3-CBC&quot;.
+<P>
+
 <DT> <A NAME="sort-default-fcc-alpha"><EM>sort-default-fcc-alpha</EM></A>
 
 <DD> This feature controls an aspect of <EM>Alpine</EM>'s FOLDER LIST screen.
