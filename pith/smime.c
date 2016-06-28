@@ -3787,8 +3787,8 @@ sign_outgoing_message(METAENV *header, BODY **bodyP, int dont_detach, BODY **bp)
 	newBody->subtype = cpystr("signed");
 	newBody->encoding = ENC7BIT;
 
-	set_parameter(&newBody->parameter, "protocol", "application/pkcs7-signature");
-	set_parameter(&newBody->parameter, "micalg", "sha1");
+	set_parameter(&newBody->parameter, "protocol", "application/x-pkcs7-signature");
+	set_parameter(&newBody->parameter, "micalg", "SHA1");
 
 	p1 = mail_newbody_part();
 	p2 = mail_newbody_part();
@@ -3802,7 +3802,7 @@ sign_outgoing_message(METAENV *header, BODY **bodyP, int dont_detach, BODY **bp)
 
 	p1->next = p2;
 
-	setup_pkcs7_body_for_signature(&p2->body, "S/MIME Cryptographic Signature", "pkcs7-signature", "smime.p7s", NULL);
+	setup_pkcs7_body_for_signature(&p2->body, "S/MIME Cryptographic Signature", "x-pkcs7-signature", "smime.p7s", NULL);
     	p2->body.mime.text.data = (unsigned char *) outs_2;
     	p2->body.contents.text.data = (unsigned char *) outs;
 
